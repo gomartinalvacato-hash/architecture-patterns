@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Architecture Patterns Portal</title>
+
+    <style>
+
+    /* =====================================================
+   BBVA Architecture Patterns Portal
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Segoe UI", Arial, sans-serif;
+    background:#F4F6F9;
+    color:#2C3E50;
+
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+
+    background:#072146;
+    color:white;
+    padding:28px 50px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+header h1{
+
+    font-size:30px;
+    font-weight:600;
+
+}
+
+header p{
+
+    margin-top:8px;
+    color:#C6D4E1;
+    font-size:15px;
+
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+
+    background:white;
+
+    display:flex;
+
+    gap:15px;
+
+    padding:18px 50px;
+
+    border-bottom:1px solid #E4E7EB;
+
+}
+
+.tab{
+
+    border:none;
+
+    background:white;
+
+    color:#072146;
+
+    cursor:pointer;
+
+    padding:12px 18px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    border-bottom:3px solid transparent;
+
+    transition:.25s;
+
+}
+
+.tab:hover{
+
+    color:#1973B8;
+
+    border-bottom:3px solid #1973B8;
+
+}
+
+.tab.active{
+
+    color:#1973B8;
+
+    border-bottom:3px solid #1973B8;
+
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main{
+
+    padding:35px 50px;
+
+}
+
+#patterns{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(470px,1fr));
+
+    gap:24px;
+
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:24px;
+
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    transition:.2s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* =====================================================
+   HEADER CARD
+===================================================== */
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.card-title{
+
+    color:#072146;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+}
+
+.subfamily{
+
+    color:#6B7280;
+
+    font-size:14px;
+
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status{
+
+    font-size:12px;
+
+    font-weight:600;
+
+    padding:6px 12px;
+
+    border-radius:16px;
+
+    white-space:nowrap;
+
+}
+
+.publicado{
+
+    background:#DDF4E4;
+
+    color:#207245;
+
+}
+
+.curso{
+
+    background:#FFF3D9;
+
+    color:#A05B00;
+
+}
+
+.revision{
+
+    background:#ECECEC;
+
+    color:#666666;
+
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.description{
+
+    line-height:1.6;
+
+    color:#4B5563;
+
+    font-size:14px;
+
+}
+
+/* =====================================================
+   SECTION TITLES
+===================================================== */
+
+.section-title{
+
+    color:#072146;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+}
+
+/* =====================================================
+   PARTICIPANTS
+===================================================== */
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+.tag{
+
+    background:#EDF3FA;
+
+    color:#072146;
+
+    border-radius:16px;
+
+    padding:6px 10px;
+
+    font-size:12px;
+
+}
+
+/* =====================================================
+   DOCUMENT BUTTON
+===================================================== */
+
+.document a{
+
+    display:inline-block;
+
+    background:#1973B8;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 16px;
+
+    border-radius:6px;
+
+    font-size:14px;
+
+    transition:.2s;
+
+}
+
+.document a:hover{
+
+    background:#0D5E99;
+
+}
+
+/* =====================================================
+   RESOURCES
+===================================================== */
+
+.resources{
+
+    padding-left:18px;
+
+}
+
+.resources li{
+
+    margin-bottom:8px;
+
+}
+
+.resources a{
+
+    color:#1973B8;
+
+    text-decoration:none;
+
+}
+
+.resources a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty{
+
+    color:#6B7280;
+
+    font-size:18px;
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>Architecture Patterns Portal</h1>
+
+            <p>Enterprise Architecture</p>
+
+        </div>
+
+    </header>
+
+    <nav>
+
+        <button class="tab active" data-discipline="GenAI">
+            GenAI
+        </button>
+
+        <button class="tab" data-discipline="Data">
+            Data
+        </button>
+
+        <button class="tab" data-discipline="Events">
+            Events
+        </button>
+
+        <button class="tab" data-discipline="Channels">
+            Channels
+        </button>
+
+    </nav>
+
+    <main>
+
+        <div id="patterns">
+
+        </div>
+
+    </main>
+    
+<script id="patterns-data" type="application/json">
+
+[
+    
+  {
+    "discipline": "GenAI",
+    "title": "Decision Framework",
+    "subcategory": "Información General Plataformas GenAI",
+    "description": "Guía para analizar las plataformas GenAI disponibles y seleccionar el framework más adecuado para cada caso de uso dentro de la organización.",
+    "status": "Publicado",
+    "participants": [
+      "GAIA",
+      "GSA",
+      "GDA",
+      "Arquitectura IA"
+    ],
+    "document": {
+      "name": "Decision Framework.pdf",
+      "url": "https://drive.google.com/file/d/1OrVfPOwW7OgMDHgqlWD1zRYPyp0C4Lkn/view"
+    },
+    "resources": [
+      {
+        "name": "Decision Framework Selector",
+        "url": "https://sites.google.com/bbva.com/decisionframework/selector"
+      }
+    ]
+  },
+  {
+    "discipline": "GenAI",
+    "title": "Tratamiento y acceso a ficheros / documentos",
+    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+    "description": "Árbol de decisión para el envío y acceso a ficheros y documentos desde la capa GenAI, incluyendo integración con gestores documentales.",
+    "status": "Para revisar",
+    "participants": [
+      "GSA",
+      "Arquitectura IPA",
+      "Arquitectura IA"
+    ],
+    "document": {
+      "name": "GSA_GenAI_CORE_DECISION_TREE_PatronRouting_v1",
+      "url": "https://docs.google.com/presentation/d/1a6JCSNZqDWW3EKH7KX_wSvZ05l8ACMpWvnGimsYXu_I/edit?slide=id.g39b77a00a00_0_587#slide=id.g39b77a00a00_0_587"
+    },
+    "resources": []
+  },
+  {
+    "discipline": "GenAI",
+    "title": "Acceso Conversacional a capa GenAI",
+    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+    "description": "Patrón para funcionalidades conversacionales mediante la plataforma CONVERSA como punto de entrada a las capacidades GenAI.",
+    "status": "Para revisar",
+    "participants": [
+      "GSA",
+      "Arquitectura IA",
+      "Arquitectura Canales",
+      "Arquitectura de Seguridad / GSeP"
+    ],
+    "document": {
+      "name": "P2_Acceso_Conversacional_Capa_GenAI",
+      "url": "https://docs.google.com/document/d/1tpoV6Yrj4ij5alPS2U6bEhf4zDQxr5xHDf02T2nr9pY/edit?tab=t.0#heading=h.19k10ttgn6y1"
+    },
+    "resources": []
+  },
+  {
+    "discipline": "GenAI",
+    "title": "Acceso No Conversacional a capa GenAI",
+    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+    "description": "Patrón para invocaciones síncronas y asíncronas desde canales y backends hacia la capa GenAI.",
+    "status": "Para revisar",
+    "participants": [
+      "GSA",
+      "Arquitectura IA",
+      "Arquitectura de Seguridad / GSeP"
+    ],
+    "document": {
+      "name": "P3_Acceso_No_Conversacional_Capa_GenAI",
+      "url": "https://docs.google.com/document/d/1Bx44pV7vcvRPSH2jSdxXuNmhPugZmmM4mpSEb6pyZjw/edit?tab=t.0"
+    },
+    "resources": []
+  },
+  {
+    "discipline": "GenAI",
+    "title": "Consumo de Datos desde capa GenAI",
+    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+    "description": "Patrón para el acceso seguro a información operacional desde agentes GenAI mediante propagación de identidad y STARGATE.",
+    "status": "Para revisar",
+    "participants": [
+      "GSA",
+      "Arquitectura IA",
+      "Arquitectura de Seguridad / GSeP"
+    ],
+    "document": {
+      "name": "Consumo Datos desde capa GenAI V1",
+      "url": "https://docs.google.com/document/d/1IQmxORj7qXrcdvltjUlaAekukli2wCs7zbIpdfsK0NM/edit?tab=t.0"
+    },
+    "resources": []
+  },
+  {
+    "discipline": "Data",
+    "title": "Inferencia Online",
+    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+    "description": "Integración en streaming con ADA mediante eventos BEA para analítica en tiempo real y procesamiento asíncrono.",
+    "status": "En curso",
+    "participants": [
+      "GSA",
+      "ADA",
+      "Data Bus"
+    ],
+    "document": {
+      "name": "P5_Inferencia_Online",
+      "url": "https://docs.google.com/document/u/0/d/1SmQumJzZqB2oCGLKbUxEsYbBFl36lWCS1F6wUX3GaMk/edit"
+    },
+    "resources": []
+  },
+  {
+    "discipline": "Data",
+    "title": "Consumo de Datos vía MCP",
+    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+    "description": "Implementación de Model Context Protocol (MCP) para acceso seguro y gobernado a datos corporativos desde agentes.",
+    "status": "Para revisar",
+    "participants": [
+      "GSA",
+      "ADA",
+      "GenAI",
+      "Arquitectura de Seguridad / GSeP"
+    ],
+    "document": {
+      "name": "Patrón MCP en ADA",
+      "url": "https://docs.google.com/document/d/1b4pxBdDal1F_uwOt51p44ejnWW9Bd77gm5M23KRJZoo/edit?tab=t.0"
+    },
+    "resources": []
+  },
+    {
+    "discipline": "Events",
+    "title": "Comunicación basada en Eventos",
+    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+    "description": "Patrón para la comunicación basada en eventos mediante BEA. Define cómo las distintas piezas publican y consumen eventos y recopila los principales patrones de integración disponibles.",
+    "status": "Para revisar",
+    "participants": [
+      "GSA",
+      "Data Bus",
+      "Arquitectura IPA"
+    ],
+    "document": {
+      "name": "Patrones de Comunicación basada en Eventos",
+      "url": "https://drive.google.com/file/d/example8/view"
+    },
+    "resources": [
+      {
+        "name": "Patrón de integración SaaS con eventos BEA",
+        "url": "https://docs.google.com/document/d/15SJyRYFNKcwph0BWBEIFUnZO33gZ94XHA0U2ObtkrHQ/edit?tab=t.0"
+      },
+      {
+        "name": "Patrón de orquestación de procesos",
+        "url": "https://docs.google.com/document/d/1qwo9EOHcKas0i7I124jmpQlaBdeQpgDyYF6cVM2LMRQ/edit?tab=t.0#heading=h.fbacu1ob30jg"
+      },
+      {
+        "name": "Patrón de monitorización operacional del fraude",
+        "url": "https://docs.google.com/document/d/1nulp2B7Im6GmaglO-IYWycRufHRrrBKdTSn6ukejCZc/edit?tab=t.0#heading=h.dfwyjksgu4zb"
+      },
+      {
+        "name": "Patrón de réplica de datos",
+        "url": "https://docs.google.com/document/d/1v_dBIvvQBrIYk5Hw89TtbZ_DxIujfxECr7cHu5Zu9E0/edit?tab=t.0"
+      },
+      {
+        "name": "Patrón de serialización",
+        "url": "https://docs.google.com/document/d/1y_vGvigZOlefThcw0imxiU_aTwc79Aerune5_9aNQn8/edit?tab=t.0"
+      }
+    ]
+  },
+  {
+    "discipline": "Channels",
+    "title": "Uso Plataforma Conversacional (CONVERSA)",
+    "subcategory": "Patrones Plataforma Conversacional",
+    "description": "Árbol de decisión para determinar cuándo utilizar la plataforma conversacional CONVERSA y las directrices de integración para casos de uso con lenguaje natural.",
+    "status": "Para revisar",
+    "participants": [
+      "GSA",
+      "Arquitectura Canales"
+    ],
+    "document": {
+      "name": "Integración con Conversa",
+      "url": "https://docs.google.com/presentation/d/1-QMMxdua0ZGz4sEbpwYbO8HRp2wZibIRt8tFVzW179o/edit?slide=id.g40991dc489a_0_183#slide=id.g40991dc489a_0_183"
+    },
+    "resources": []
+  }
+]
+
+</script>
+    <script>
+
+    let patterns = [];
+let currentDiscipline = "GenAI";
+
+function loadPatterns() {
+
+    const json = document.getElementById("patterns-data").textContent;
+
+    patterns = JSON.parse(json);
+
+    renderPatterns();
+
+}
+
+loadPatterns();
+// -------------------------------
+// Tabs
+// -------------------------------
+
+document.querySelectorAll(".tab").forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+
+        tab.classList.add("active");
+
+        currentDiscipline = tab.dataset.discipline;
+
+        renderPatterns();
+
+    });
+
+});
+
+// -------------------------------
+// Status color
+// -------------------------------
+
+function getStatusClass(status){
+
+    switch(status){
+
+        case "Publicado":
+            return "publicado";
+
+        case "En curso":
+            return "curso";
+
+        default:
+            return "revision";
+
+    }
+
+}
+
+// -------------------------------
+// Render cards
+// -------------------------------
+
+function renderPatterns(){
+
+    const container = document.getElementById("patterns");
+
+    container.innerHTML = "";
+
+    const filtered = patterns.filter(pattern => pattern.discipline === currentDiscipline);
+
+    if(filtered.length === 0){
+
+        container.innerHTML = `
+            <div class="empty">
+                No patterns available.
+            </div>
+        `;
+
+        return;
+
+    }
+
+    filtered.forEach(pattern => {
+
+        const participants = pattern.participants.map(team =>
+
+            `<span class="tag">${team}</span>`
+
+        ).join("");
+
+        const resources = pattern.resources.map(resource =>
+
+            `
+            <li>
+                <a href="${resource.url}" target="_blank">
+                    ${resource.name}
+                </a>
+            </li>
+            `
+
+        ).join("");
+
+        const card = document.createElement("div");
+
+        card.className = "card";
+
+        card.innerHTML = `
+
+            <div class="card-header">
+
+                <div>
+
+                    <h2 class="card-title">
+
+                        ${pattern.title}
+
+                    </h2>
+
+                    <div class="subfamily">
+
+                        ${pattern.subcategory}
+
+                    </div>
+
+                </div>
+
+                <div class="status ${getStatusClass(pattern.status)}">
+
+                    ${pattern.status}
+
+                </div>
+
+            </div>
+
+            <div class="description">
+
+                ${pattern.description}
+
+            </div>
+
+            <div>
+
+                <div class="section-title">
+
+                    Participants
+
+                </div>
+
+                <div class="tags">
+
+                    ${participants}
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="section-title">
+
+                    Document
+
+                </div>
+
+                <div class="document">
+
+                    <a href="${pattern.document.url}" target="_blank">
+
+                        📄 ${pattern.document.name}
+
+                    </a>
+
+                </div>
+
+            </div>
+            
+            ${
+                pattern.resources.length > 0
+                ?
+                `
+                <div>
+
+                    <div class="section-title">
+
+                        Resources
+
+                    </div>
+
+                    <ul class="resources">
+
+                        ${resources}
+
+                    </ul>
+
+                </div>
+                `
+                :
+                ""
+            }
+
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+    </script>
+
+</body>
+
+</html>
