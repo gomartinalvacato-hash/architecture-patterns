@@ -1,426 +1,378 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Architecture Patterns Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>Architecture Pattern Catalog</title>
 
-    /* =====================================================
+<style>
+
+/* =====================================================
    BBVA Architecture Patterns Portal
 ===================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-    font-family:"Segoe UI", Arial, sans-serif;
-    background:#F4F6F9;
-    color:#2C3E50;
-
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #F4F6F9;
+    color: #2C3E50;
 }
 
 /* =====================================================
    HEADER
 ===================================================== */
 
-header{
-
-    background:#072146;
-    color:white;
-    padding:28px 50px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
-
+header {
+    background: #072146;
+    color: white;
+    padding: 28px 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
-header h1{
-
-    font-size:30px;
-    font-weight:600;
-
+header h1 {
+    font-size: 30px;
+    font-weight: 600;
 }
 
-header p{
-
-    margin-top:8px;
-    color:#C6D4E1;
-    font-size:15px;
-
+header p {
+    margin-top: 8px;
+    color: #C6D4E1;
+    font-size: 15px;
 }
 
 /* =====================================================
    NAVIGATION
 ===================================================== */
 
-nav{
-
-    background:white;
-
-    display:flex;
-
-    gap:15px;
-
-    padding:18px 50px;
-
-    border-bottom:1px solid #E4E7EB;
-
+nav {
+    background: white;
+    display: flex;
+    gap: 15px;
+    padding: 18px 50px;
+    border-bottom: 1px solid #E4E7EB;
 }
 
-.tab{
-
-    border:none;
-
-    background:white;
-
-    color:#072146;
-
-    cursor:pointer;
-
-    padding:12px 18px;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    border-bottom:3px solid transparent;
-
-    transition:.25s;
-
+.tab {
+    border: none;
+    background: white;
+    color: #072146;
+    cursor: pointer;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    transition: .25s;
 }
 
-.tab:hover{
-
-    color:#1973B8;
-
-    border-bottom:3px solid #1973B8;
-
+.tab:hover {
+    color: #1973B8;
+    border-bottom: 3px solid #1973B8;
 }
 
-.tab.active{
-
-    color:#1973B8;
-
-    border-bottom:3px solid #1973B8;
-
+.tab.active {
+    color: #1973B8;
+    border-bottom: 3px solid #1973B8;
 }
 
 /* =====================================================
    MAIN
 ===================================================== */
 
-main{
-
-    padding:35px 50px;
-
+main {
+    padding: 35px 50px;
 }
 
-#patterns{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fill,minmax(470px,1fr));
-
-    gap:24px;
-
+#patterns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+    gap: 24px;
 }
 
 /* =====================================================
-   CARD
+   MAIN CARD
 ===================================================== */
 
-.card{
-
-    background:white;
-
-    border-radius:14px;
-
-    padding:24px;
-
-    box-shadow:0 4px 14px rgba(0,0,0,.08);
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-    transition:.2s;
-
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: .2s;
 }
 
-.card:hover{
-
-    transform:translateY(-3px);
-
+.card:hover {
+    transform: translateY(-3px);
 }
 
 /* =====================================================
    HEADER CARD
 ===================================================== */
 
-.card-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    gap:15px;
-
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
 }
 
-.card-title{
-
-    color:#072146;
-
-    font-size:22px;
-
-    font-weight:600;
-
-    margin-bottom:6px;
-
+.card-title {
+    color: #072146;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
-.subfamily{
-
-    color:#6B7280;
-
-    font-size:14px;
-
+.subfamily {
+    color: #6B7280;
+    font-size: 14px;
 }
 
 /* =====================================================
    STATUS
 ===================================================== */
 
-.status{
-
-    font-size:12px;
-
-    font-weight:600;
-
-    padding:6px 12px;
-
-    border-radius:16px;
-
-    white-space:nowrap;
-
+.status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 16px;
+    white-space: nowrap;
 }
 
-.publicado{
-
-    background:#DDF4E4;
-
-    color:#207245;
-
+.publicado {
+    background: #DDF4E4;
+    color: #207245;
 }
 
-.curso{
-
-    background:#FFF3D9;
-
-    color:#A05B00;
-
+.curso {
+    background: #FFF3D9;
+    color: #A05B00;
 }
 
-.revision{
-
-    background:#ECECEC;
-
-    color:#666666;
-
+.revision {
+    background: #ECECEC;
+    color: #666666;
 }
 
 /* =====================================================
    DESCRIPTION
 ===================================================== */
 
-.description{
-
-    line-height:1.6;
-
-    color:#4B5563;
-
-    font-size:14px;
-
+.description {
+    line-height: 1.6;
+    color: #4B5563;
+    font-size: 14px;
 }
 
 /* =====================================================
    SECTION TITLES
 ===================================================== */
 
-.section-title{
-
-    color:#072146;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    margin-bottom:10px;
-
+.section-title {
+    color: #072146;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 /* =====================================================
    PARTICIPANTS
 ===================================================== */
 
-.tags{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:8px;
-
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.tag{
-
-    background:#EDF3FA;
-
-    color:#072146;
-
-    border-radius:16px;
-
-    padding:6px 10px;
-
-    font-size:12px;
-
+.tag {
+    background: #EDF3FA;
+    color: #072146;
+    border-radius: 16px;
+    padding: 6px 10px;
+    font-size: 12px;
 }
 
 /* =====================================================
    DOCUMENT BUTTON
 ===================================================== */
 
-.document a{
-
-    display:inline-block;
-
-    background:#1973B8;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:10px 16px;
-
-    border-radius:6px;
-
-    font-size:14px;
-
-    transition:.2s;
-
+.document a {
+    display: inline-block;
+    background: #1973B8;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: .2s;
 }
 
-.document a:hover{
-
-    background:#0D5E99;
-
+.document a:hover {
+    background: #0D5E99;
 }
 
 /* =====================================================
-   RESOURCES
+   RESOURCES GRID
 ===================================================== */
 
-.resources{
-
-    padding-left:18px;
-
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 12px;
 }
 
-.resources li{
+/* =====================================================
+   RESOURCE CARD
+===================================================== */
 
-    margin-bottom:8px;
-
+.resource-card {
+    display: block;
+    padding: 18px;
+    border: 1px solid #E1E5EB;
+    border-radius: 10px;
+    background: #FFFFFF;
+    color: inherit;
+    text-decoration: none;
+    transition: all .2s ease;
 }
 
-.resources a{
-
-    color:#1973B8;
-
-    text-decoration:none;
-
+.resource-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    border-color: #1973B8;
 }
 
-.resources a:hover{
+.resource-card-content {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
 
-    text-decoration:underline;
+.resource-icon {
+    font-size: 20px;
+    color: #1973B8;
+    flex-shrink: 0;
+}
 
+.resource-card h5 {
+    margin: 0 0 8px 0;
+    color: #072146;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.resource-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6B7280;
 }
 
 /* =====================================================
    EMPTY
 ===================================================== */
 
-.empty{
+.empty {
+    color: #6B7280;
+    font-size: 18px;
+}
 
-    color:#6B7280;
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-    font-size:18px;
+@media (max-width: 768px) {
+
+    header {
+        padding: 24px;
+    }
+
+    nav {
+        padding: 15px 24px;
+        overflow-x: auto;
+    }
+
+    main {
+        padding: 24px;
+    }
+
+    #patterns {
+        grid-template-columns: 1fr;
+    }
+
+    .card-header {
+        flex-direction: column;
+    }
 
 }
 
-    </style>
+</style>
+
 
 </head>
 
 <body>
 
-    <header>
 
-        <div class="header-content">
+<header>
 
-            <h1>Architecture Patterns Portal</h1>
+    <div class="header-content">
 
-            <p>Enterprise Architecture</p>
+        <h1>Architecture Pattern Catalog</h1>
 
-        </div>
+        <p>Portal de navegación de patrones de arquitectura</p>
 
-    </header>
+    </div>
 
-    <nav>
+</header>
 
-        <button class="tab active" data-discipline="GenAI">
-            GenAI
-        </button>
+<nav>
 
-        <button class="tab" data-discipline="Data">
-            Data
-        </button>
+    <button class="tab active" data-discipline="GenAI">
+        GenAI
+    </button>
 
-        <button class="tab" data-discipline="Events">
-            Events
-        </button>
+    <button class="tab" data-discipline="Data">
+        Data
+    </button>
 
-        <button class="tab" data-discipline="Channels">
-            Channels
-        </button>
+    <button class="tab" data-discipline="Events">
+        Events
+    </button>
 
-    </nav>
+    <button class="tab" data-discipline="Channels">
+        Channels
+    </button>
 
-    <main>
+</nav>
 
-        <div id="patterns">
+<main>
 
-        </div>
+    <div id="patterns"></div>
 
-    </main>
-    
+</main>
+
+
 <script id="patterns-data" type="application/json">
 
 [
-    
   {
     "discipline": "GenAI",
     "title": "Decision Framework",
@@ -440,10 +392,12 @@ main{
     "resources": [
       {
         "name": "Decision Framework Selector",
+        "description": "Test",
         "url": "https://sites.google.com/bbva.com/decisionframework/selector"
       }
     ]
   },
+
   {
     "discipline": "GenAI",
     "title": "Tratamiento y acceso a ficheros / documentos",
@@ -461,6 +415,7 @@ main{
     },
     "resources": []
   },
+
   {
     "discipline": "GenAI",
     "title": "Acceso Conversacional a capa GenAI",
@@ -479,6 +434,7 @@ main{
     },
     "resources": []
   },
+
   {
     "discipline": "GenAI",
     "title": "Acceso No Conversacional a capa GenAI",
@@ -496,6 +452,7 @@ main{
     },
     "resources": []
   },
+
   {
     "discipline": "GenAI",
     "title": "Consumo de Datos desde capa GenAI",
@@ -513,6 +470,7 @@ main{
     },
     "resources": []
   },
+
   {
     "discipline": "Data",
     "title": "Inferencia Online",
@@ -530,6 +488,7 @@ main{
     },
     "resources": []
   },
+
   {
     "discipline": "Data",
     "title": "Consumo de Datos vía MCP",
@@ -548,44 +507,94 @@ main{
     },
     "resources": []
   },
-    {
-    "discipline": "Events",
-    "title": "Comunicación basada en Eventos",
-    "subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
-    "description": "Patrón para la comunicación basada en eventos mediante BEA. Define cómo las distintas piezas publican y consumen eventos y recopila los principales patrones de integración disponibles.",
-    "status": "Para revisar",
-    "participants": [
-      "GSA",
-      "Data Bus",
-      "Arquitectura IPA"
-    ],
-    "document": {
-      "name": "Patrones de Comunicación basada en Eventos",
-      "url": "https://drive.google.com/file/d/example8/view"
-    },
-    "resources": [
-      {
-        "name": "Patrón de integración SaaS con eventos BEA",
-        "url": "https://docs.google.com/document/d/15SJyRYFNKcwph0BWBEIFUnZO33gZ94XHA0U2ObtkrHQ/edit?tab=t.0"
-      },
-      {
-        "name": "Patrón de orquestación de procesos",
-        "url": "https://docs.google.com/document/d/1qwo9EOHcKas0i7I124jmpQlaBdeQpgDyYF6cVM2LMRQ/edit?tab=t.0#heading=h.fbacu1ob30jg"
-      },
-      {
-        "name": "Patrón de monitorización operacional del fraude",
-        "url": "https://docs.google.com/document/d/1nulp2B7Im6GmaglO-IYWycRufHRrrBKdTSn6ukejCZc/edit?tab=t.0#heading=h.dfwyjksgu4zb"
-      },
-      {
-        "name": "Patrón de réplica de datos",
-        "url": "https://docs.google.com/document/d/1v_dBIvvQBrIYk5Hw89TtbZ_DxIujfxECr7cHu5Zu9E0/edit?tab=t.0"
-      },
-      {
-        "name": "Patrón de serialización",
-        "url": "https://docs.google.com/document/d/1y_vGvigZOlefThcw0imxiU_aTwc79Aerune5_9aNQn8/edit?tab=t.0"
-      }
-    ]
-  },
+
+  {
+"discipline": "Events",
+"title": "Integración SaaS con eventos BEA",
+"subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+"description": "Patrón de arquitectura para integrar plataformas SaaS externas con el ecosistema de BBVA de manera asíncrona y estandarizada. La solución utiliza las capas de mediación SODA y el Event Gateway para normalizar y publicar eventos de negocio hacia la arquitectura BEA, facilitando procesos internos sin acoplamientos directos.",
+"status": "Para revisar",
+"participants": [
+  "GSA",
+  "Data Bus",
+  "Arquitectura IPA"
+],
+"document": {
+"name": "Patrón de integración SaaS con eventos BEA",
+"url": "https://docs.google.com/document/d/1pH8hI1005wkB4fY9SDJFeyMZvYuAH3yE4Pwox_n9t3Y/edit?tab=t.0"
+},
+"resources": []
+},
+{
+"discipline": "Events",
+"title": "Orquestación de procesos",
+"subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+"description": "Patrón de arquitectura asíncrono para gestionar procesos de larga duración en IPA, utilizando el bus corporativo Upsilon para notificar la finalización. Este enfoque evita bloqueos en las aplicaciones cliente y asegura una comunicación robusta al desacoplar la solicitud del proceso de la obtención de resultados.",
+"status": "Para revisar",
+"participants": [
+  "GSA",
+  "Data Bus",
+  "Arquitectura IPA"
+],
+"document": {
+"name": "Patrón de orquestación de procesos",
+"url": "https://docs.google.com/document/d/1qwo9EOHcKas0i7I124jmpQlaBdeQpgDyYF6cVM2LMRQ/edit?tab=t.0#heading=h.fbacu1ob30jg"
+},
+"resources": []
+},
+{
+"discipline": "Events",
+"title": "Monitorización operacional del Fraude",
+"subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+"description": "Este documento define un patrón de monitorización operacional de fraude para integrar GenAI en el ecosistema de BBVA, asegurando la auditabilidad sin generar eventos redundantes. Propone reutilizar canales de monitoreo estándar para operaciones delegadas y emitir eventos directos solo cuando GenAI actúa de forma independiente, centralizando el flujo hacia el sistema antifraude ARIC.",
+"status": "Para revisar",
+"participants": [
+  "GSA",
+  "Data Bus",
+  "Arquitectura IPA"
+],
+"document": {
+"name": "Patrón de monitorización operacional del fraude",
+"url": "https://docs.google.com/document/d/1nulp2B7Im6GmaglO-IYWycRufHRrrBKdTSn6ukejCZc/edit?tab=t.0#heading=h.dfwyjksgu4zb"
+},
+"resources": []
+},
+{
+"discipline": "Events",
+"title": "Réplica de Datos",
+"subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+"description": "El patrón de réplica de datos permite descargar el tráfico de lectura de los sistemas transaccionales core mediante una sincronización asíncrona por eventos, garantizando la consistencia eventual y la alta disponibilidad. Esta solución emplea técnicas como CDC para entornos Mainframe o CQRS para microservicios, logrando desacoplar los sistemas para optimizar el rendimiento sin impactar la operativa origen.",
+"status": "Para revisar",
+"participants": [
+  "GSA",
+  "Data Bus",
+  "Arquitectura IPA"
+],
+"document": {
+"name": "Patrón de réplica de datos",
+"url": "https://docs.google.com/document/d/1v_dBIvvQBrIYk5Hw89TtbZ_DxIujfxECr7cHu5Zu9E0/edit?tab=t.0"
+},
+"resources": []
+},
+{
+"discipline": "Events",
+"title": "Serialización",
+"subcategory": "Patrones Plataforma Geni@ (GenAI Build)",
+"description": "El patrón de serialización propone descomponer objetos complejos recibidos de forma no planificada en elementos unitarios, permitiendo su procesamiento paralelo e independiente para lograr una respuesta en tiempo casi real. Esta solución busca optimizar la carga en los sistemas sin saturar la infraestructura, garantizando la escalabilidad y protección mediante mecanismos de regulación de flujo.",
+"status": "Para revisar",
+"participants": [
+  "GSA",
+  "Data Bus",
+  "Arquitectura IPA"
+],
+"document": {
+"name": "Patrón de serialización",
+"url": "https://docs.google.com/document/d/1y_vGvigZOlefThcw0imxiU_aTwc79Aerune5_9aNQn8/edit?tab=t.0"
+},
+"resources": []
+}
+,
+
   {
     "discipline": "Channels",
     "title": "Uso Plataforma Conversacional (CONVERSA)",
@@ -605,212 +614,259 @@ main{
 ]
 
 </script>
-    <script>
+
+<script>
 
     let patterns = [];
-let currentDiscipline = "GenAI";
 
-function loadPatterns() {
+    let currentDiscipline = "GenAI";
 
-    const json = document.getElementById("patterns-data").textContent;
+    function loadPatterns() {
 
-    patterns = JSON.parse(json);
+        const json = document.getElementById("patterns-data").textContent;
 
-    renderPatterns();
-
-}
-
-loadPatterns();
-// -------------------------------
-// Tabs
-// -------------------------------
-
-document.querySelectorAll(".tab").forEach(tab => {
-
-    tab.addEventListener("click", () => {
-
-        document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-
-        tab.classList.add("active");
-
-        currentDiscipline = tab.dataset.discipline;
+        patterns = JSON.parse(json);
 
         renderPatterns();
 
+    }
+
+    loadPatterns();
+
+    // -------------------------------
+    // Tabs
+    // -------------------------------
+
+    document.querySelectorAll(".tab").forEach(tab => {
+
+        tab.addEventListener("click", () => {
+
+            document.querySelectorAll(".tab").forEach(t => {
+
+                t.classList.remove("active");
+
+            });
+
+            tab.classList.add("active");
+
+            currentDiscipline = tab.dataset.discipline;
+
+            renderPatterns();
+
+        });
+
     });
 
-});
+    // -------------------------------
+    // Status color
+    // -------------------------------
 
-// -------------------------------
-// Status color
-// -------------------------------
+    function getStatusClass(status) {
 
-function getStatusClass(status){
+        switch(status) {
 
-    switch(status){
+            case "Publicado":
+                return "publicado";
 
-        case "Publicado":
-            return "publicado";
+            case "En curso":
+                return "curso";
 
-        case "En curso":
-            return "curso";
+            default:
+                return "revision";
 
-        default:
-            return "revision";
-
-    }
-
-}
-
-// -------------------------------
-// Render cards
-// -------------------------------
-
-function renderPatterns(){
-
-    const container = document.getElementById("patterns");
-
-    container.innerHTML = "";
-
-    const filtered = patterns.filter(pattern => pattern.discipline === currentDiscipline);
-
-    if(filtered.length === 0){
-
-        container.innerHTML = `
-            <div class="empty">
-                No patterns available.
-            </div>
-        `;
-
-        return;
+        }
 
     }
 
-    filtered.forEach(pattern => {
+    // -------------------------------
+    // Render cards
+    // -------------------------------
 
-        const participants = pattern.participants.map(team =>
+    function renderPatterns() {
 
-            `<span class="tag">${team}</span>`
+        const container = document.getElementById("patterns");
 
-        ).join("");
+        container.innerHTML = "";
 
-        const resources = pattern.resources.map(resource =>
+        const filtered = patterns.filter(
 
-            `
-            <li>
-                <a href="${resource.url}" target="_blank">
-                    ${resource.name}
+            pattern => pattern.discipline === currentDiscipline
+
+        );
+
+        if(filtered.length === 0) {
+
+            container.innerHTML = `
+                <div class="empty">
+                    No patterns available.
+                </div>
+            `;
+
+            return;
+
+        }
+
+        filtered.forEach(pattern => {
+
+            const participants = pattern.participants.map(team =>
+
+                `<span class="tag">${team}</span>`
+
+            ).join("");
+
+            const resources = pattern.resources.map(resource =>
+
+                `
+                <a
+                    href="${resource.url}"
+                    class="resource-card"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <div class="resource-card-content">
+
+                        <div class="resource-icon">
+                            ↗
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                ${resource.name}
+                            </h5>
+
+                            <p>
+                                ${resource.description || "Test"}
+                            </p>
+
+                        </div>
+
+                    </div>
+
                 </a>
-            </li>
-            `
+                `
 
-        ).join("");
+            ).join("");
 
-        const card = document.createElement("div");
+            const card = document.createElement("div");
 
-        card.className = "card";
+            card.className = "card";
 
-        card.innerHTML = `
+            card.innerHTML = `
 
-            <div class="card-header">
+                <div class="card-header">
 
-                <div>
+                    <div>
 
-                    <h2 class="card-title">
+                        <h2 class="card-title">
 
-                        ${pattern.title}
+                            ${pattern.title}
 
-                    </h2>
+                        </h2>
 
-                    <div class="subfamily">
+                        <div class="subfamily">
 
-                        ${pattern.subcategory}
+                            ${pattern.subcategory}
+
+                        </div>
+
+                    </div>
+
+                    <div class="status ${getStatusClass(pattern.status)}">
+
+                        ${pattern.status}
 
                     </div>
 
                 </div>
 
-                <div class="status ${getStatusClass(pattern.status)}">
+                <div class="description">
 
-                    ${pattern.status}
-
-                </div>
-
-            </div>
-
-            <div class="description">
-
-                ${pattern.description}
-
-            </div>
-
-            <div>
-
-                <div class="section-title">
-
-                    Participants
+                    ${pattern.description}
 
                 </div>
 
-                <div class="tags">
-
-                    ${participants}
-
-                </div>
-
-            </div>
-
-            <div>
-
-                <div class="section-title">
-
-                    Document
-
-                </div>
-
-                <div class="document">
-
-                    <a href="${pattern.document.url}" target="_blank">
-
-                        📄 ${pattern.document.name}
-
-                    </a>
-
-                </div>
-
-            </div>
-            
-            ${
-                pattern.resources.length > 0
-                ?
-                `
                 <div>
 
                     <div class="section-title">
 
-                        Resources
+                        Participants
 
                     </div>
 
-                    <ul class="resources">
+                    <div class="tags">
 
-                        ${resources}
+                        ${participants}
 
-                    </ul>
+                    </div>
 
                 </div>
-                `
-                :
-                ""
-            }
 
-        `;
+                <div>
 
-        container.appendChild(card);
+                    <div class="section-title">
 
-    });
+                        Document
 
-}
+                    </div>
+
+                    <div class="document">
+
+                        <a
+                            href="${pattern.document.url}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            📄 ${pattern.document.name}
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                ${
+                    pattern.resources.length > 0
+                    ?
+                    `
+
+                    <div>
+
+                        <div class="section-title">
+
+                            Resources
+
+                        </div>
+
+                        <div class="resources-grid">
+
+                            ${resources}
+
+                        </div>
+
+                    </div>
+
+                    `
+                    :
+                    ""
+
+                }
+
+            `;
+
+            container.appendChild(card);
+
+        });
+
+    }
+
+</script>
+
+</body>
+
+</html>
     </script>
 
 </body>
